@@ -16,4 +16,4 @@ Here are some ideas to get you started:
 -->
 ![servrox's github stats](https://github-readme-stats.vercel.app/api?username=servrox&theme=nord&show_icons=true&hide=commits)
 
-<img src="https://i.pinimg.com/originals/62/2e/8e/622e8e41d315345c3e834032dba8d37b.gif" alt="Metal Slug GIF" width="150">
+<img src="https://i.imgur.com/8DgPYai.gif" alt="Metal Slug GIF" width="150">
