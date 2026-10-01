@@ -1,0 +1,64 @@
+username: servrox
+
+profile:
+  name: "servrox"
+  tagline: "Full-stack developer · Stuttgart"
+  location: "Stuttgart, Germany"
+  philosophy: "Thoughtful interfaces. Useful tools."
+
+social:
+  website: "https://servrox.solutions/"
+
+galaxy_arms:
+  - name: "Web & mobile"
+    items: [TypeScript, Angular, React, Ionic]
+    repos:
+      - animations-lib
+      - demo-interact-router
+      - demo-ionic-tab-routing
+      - demo-ionic-tabs-back-button
+      - ion-back-button-tabs
+      - ionic4-device-motion
+  - name: "Full stack & Web3"
+    items: [Next.js, Node.js, NestJS, Aptos]
+    repos:
+      - 1337-turbo-starter
+      - nx-ng-nest-universal
+      - aptos-crash-casino
+      - soap-geolocation
+  - name: "Developer tools"
+    items: [JavaScript, Bun, Turborepo, GitHub Actions]
+    repos:
+      - console-fx
+      - stark-ai-de/agent-skills
+
+projects:
+  - repo: "servrox/console-fx"
+    arm: 2
+    description: "Expressive console output, with a visual studio."
+  - repo: "servrox/1337-turbo-starter"
+    arm: 1
+    description: "A full-stack Web3 starter for Aptos and IOTA."
+  - repo: "stark-ai-de/agent-skills"
+    arm: 2
+    description: "Practical skills for AI coding agents."
+
+theme:
+  dark: "deep-sky"
+  light: "cyanotype"
+  void: "#0d1117"
+  text_bright: "#f0f6fc"
+  text_dim: "#aab9cc"
+  text_faint: "#3c4e64"
+  synapse_cyan: "#73daca"
+  dendrite_violet: "#a6b8ff"
+  axon_amber: "#e6bd88"
+
+motion: true
+
+stats:
+  metrics: [stars, prs, repos]
+
+languages:
+  exclude: []
+  max_display: 5

@@ -1,0 +1,102 @@
+name: Generate Profile SVGs
+
+on:
+  schedule:
+    - cron: "23 4,16 * * *"
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "config.yml"
+      - "config.example.yml"
+      - "generator/**"
+      - "tests/**"
+      - "tools/**"
+      - "requirements*.txt"
+      - "README*.md"
+      - "pytest.ini"
+      - ".github/workflows/generate-profile.yml"
+  push:
+    branches: [main]
+    paths:
+      - "config.yml"
+      - "config.example.yml"
+      - "generator/**"
+      - "tests/**"
+      - "tools/**"
+      - "requirements*.txt"
+      - "README*.md"
+      - "pytest.ini"
+      - ".github/workflows/generate-profile.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    name: Validate profile generator
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements-dev.txt
+      - name: Check Python syntax
+        run: python -m compileall -q generator tools tests
+      - name: Run generator and SVG contract tests
+        run: python -m pytest -q -o addopts=--tb=short
+      - name: Validate personal configuration
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+          from generator.config import validate_config
+          validate_config(yaml.safe_load(Path("config.yml").read_text(encoding="utf-8")))
+          PY
+
+  generate:
+    name: Refresh profile images
+    needs: test
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout latest profile
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: main
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Generate images from real GitHub data
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python -m generator.main
+      - name: Publish changed images
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add assets/generated/
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'chore: refresh profile sky [skip ci]'
+          git -c credential.helper= -c 'credential.helper=!gh auth git-credential' push origin HEAD:main
