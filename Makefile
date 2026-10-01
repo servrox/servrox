@@ -4,7 +4,7 @@ PY ?= .venv/bin/python
 
 install:
 	python3 -m venv .venv
-	$(PY) -m pip install -r requirements-dev.txt
+	$(PY) -m pip install --require-hashes -r requirements-dev.txt
 
 test:
 	$(PY) -m pytest -q -o addopts=--tb=short

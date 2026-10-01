@@ -10,5 +10,6 @@ Font License. Their notices and source font files are preserved in
 [assets/fonts](assets/fonts/README.md).
 
 This adaptation, made on 2026-10-01, adds servrox's profile copy, project choices,
-focus areas, colors, and an automation workflow. The generator source and reference fixtures are
+focus areas, colors, and an automation workflow. It updates and locks the Python
+dependencies to address security advisories. The generator source and reference fixtures are
 retained so that the artwork can be reproduced and its SVG contracts checked.

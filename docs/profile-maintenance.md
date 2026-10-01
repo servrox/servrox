@@ -23,7 +23,7 @@ Use Linux Python 3.12 or newer and an isolated environment:
 
 ```sh
 python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements-dev.txt
+.venv/bin/python -m pip install --require-hashes -r requirements-dev.txt
 .venv/bin/python -m compileall -q generator tools tests
 .venv/bin/python -m pytest -q -o addopts=--tb=short
 ```
@@ -41,3 +41,19 @@ The upstream example config, README template, changelog, tests, and source fonts
 are retained as reference material. See `NOTICE.md` for the pinned source and
 license credits. The custom workflow and profile content are maintained here;
 upstream changes should be reviewed before copying them in.
+
+## Dependency updates
+
+`requirements.in` and `requirements-dev.in` declare the direct dependencies.
+The corresponding `.txt` files lock the complete dependency sets and distribution
+hashes. Installation enforces those hashes. The HTTP dependency and transitive
+IDNA and syntax-highlighting packages are pinned to patched versions rather than
+the upstream template's outdated requirements.
+
+After reviewing changes to the inputs, regenerate both locks with the existing
+Linux `uv` tool, then run the tests and Security Baseline:
+
+```sh
+uv pip compile requirements.in --python-version 3.12 --universal --generate-hashes --no-header --no-annotate --output-file requirements.txt
+uv pip compile requirements-dev.in --constraint requirements.txt --python-version 3.12 --universal --generate-hashes --no-header --no-annotate --output-file requirements-dev.txt
+```
