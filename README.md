@@ -42,23 +42,23 @@ Reviewed workflows for Codex, Claude Code and Cursor, built from our daily engin
       <p><b>stark AI</b></p>
       <p><a href="https://github.com/stark-ai-de"><picture>
         <source media="(prefers-color-scheme: dark)" srcset="./assets/brands/stark-ai-dark.svg">
-        <img src="./assets/brands/stark-ai-light.svg" width="110" height="110" alt="stark AI — original horse and wordmark">
+        <img src="./assets/brands/stark-ai-light.svg" width="110" alt="stark AI — original horse and wordmark">
       </picture></a></p>
-      <p>Practical AI systems, agents and engineering workflows.</p>
+      <p>Practical AI systems, agents and engi&shy;neering work&shy;flows.</p>
       <p><a href="https://github.com/stark-ai-de">GitHub</a> · <a href="https://stark-ai.de/en">Website</a></p>
     </td>
     <td width="33%" align="center" valign="top">
       <p><b>servrox solutions</b></p>
       <p><a href="https://github.com/servrox-solutions"><picture>
         <source media="(prefers-color-scheme: dark)" srcset="./assets/brands/servrox-dark.svg">
-        <img src="./assets/brands/servrox-light.svg" width="90" height="90" alt="servrox solutions — segmented S signet">
+        <img src="./assets/brands/servrox-light.svg" width="90" alt="servrox solutions — segmented S signet">
       </picture></a></p>
-      <p>The software consultancy I co-founded in 2021.</p>
+      <p>The software consul&shy;tancy I co-founded in 2021.</p>
       <p><a href="https://github.com/servrox-solutions">GitHub</a> · <a href="https://servrox.solutions/">Website</a></p>
     </td>
     <td width="33%" align="center" valign="top">
-      <p><b>Panana Predictions</b></p>
-      <p><a href="https://panana.fun/"><img src="./assets/brands/mr-peeltos.png" width="60" height="110" alt="Mr. Peeltos, Panana’s banana mascot in sunglasses and a colourful shirt"></a></p>
+      <p><b>Panana Predic&shy;tions</b></p>
+      <p><a href="https://panana.fun/"><img src="./assets/brands/mr-peeltos.png" width="60" alt="Mr. Peeltos, Panana’s banana mascot in sunglasses and a colourful shirt"></a></p>
       <p>An on-chain prediction market on Aptos. <b>DeFi/RWA winner at Aptos Code Collision 2024.</b></p>
       <p><a href="https://panana.fun/">Landing</a> · <a href="https://app.panana.fun/">Platform</a></p>
     </td>

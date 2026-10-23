@@ -62,7 +62,10 @@ uv pip compile requirements-dev.in --constraint requirements.txt --python-versio
 
 The public README presents Agent Skills first, followed by a three-column row
 for stark AI, servrox solutions and Panana Predictions. Each brand occupies
-one cell, with its own logo, description and links. Brand originals and provenance live in
+one cell, with its own logo, description and links. Images specify width only
+so GitHub can preserve their aspect ratio when constraining mobile columns.
+Discretionary soft hyphens (`&shy;`) in long words keep the three-column row within
+narrow profile widths without changing the visible wording. Brand originals and provenance live in
 `assets/brands/`. Keep essential descriptions as Markdown and verify both
 light and dark picture variants when changing artwork. The language chart and activity are visible below the project links without
 section headings. `languages.compact: true` omits the chart heading, divider and
