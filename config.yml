@@ -62,5 +62,6 @@ stats:
   metrics: [stars, prs, repos]
 
 languages:
+  compact: true
   exclude: []
   max_display: 5

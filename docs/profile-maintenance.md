@@ -63,8 +63,9 @@ uv pip compile requirements-dev.in --constraint requirements.txt --python-versio
 The public README presents Agent Skills first, followed by a three-column row
 for stark AI, servrox solutions and Panana Predictions. Brand originals and provenance live in
 `assets/brands/`. Keep essential descriptions as Markdown and verify both
-light and dark picture variants when changing artwork. The project constellation, toolkit and activity
-are visible below the project links. Header image URLs carry a version query
+light and dark picture variants when changing artwork. The language chart and activity are visible below the project links without
+section headings. `languages.compact: true` omits the chart heading, divider and
+declared stack; the default layout remains available to other configurations. Header image URLs carry a version query
 to refresh stale image-proxy caches after editorial changes.
 
 `profile.philosophy` supports multiple lines, including a separate attribution.

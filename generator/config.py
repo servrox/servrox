@@ -181,6 +181,8 @@ def validate_config(config: dict) -> dict:
     stats["metrics"] = metrics
 
     languages = _section(config, "languages")
+    if not isinstance(languages.get("compact", False), bool):
+        raise ConfigError("languages.compact must be true or false.")
     exclude = languages.get("exclude")
     if exclude is None:
         exclude = []

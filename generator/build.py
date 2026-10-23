@@ -20,7 +20,7 @@ RENDERERS = {
     "tech-stack": lambda snap, config, theme, mobile, motion:
         languages.render(model.language_shares(snap, config["languages"]["exclude"],
                                                config["languages"]["max_display"]),
-                         config["galaxy_arms"], theme, mobile, motion),
+                         config["galaxy_arms"], theme, mobile, motion, compact=config["languages"].get("compact", False)),
     "projects-constellation": lambda snap, config, theme, mobile, motion:
         featured.render(model.featured(snap, config), theme, mobile, motion),
 }

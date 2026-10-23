@@ -463,3 +463,18 @@ def test_a_plate_that_cannot_be_made_to_fit_says_so_in_the_log_and_is_drawn_anyw
         svg = plate(arms=ordinary_areas(3))
     ET.fromstring(svg)
     assert "over the" in caplog.text and "tech-stack" in caplog.text
+
+
+@pytest.mark.parametrize("mobile", [False, True])
+@pytest.mark.parametrize("motion", [False, True])
+def test_compact_chart_preserves_shares_without_heading_divider_or_declared_stack(mobile, motion):
+    svg = languages.render(SHARES, ARMS, SKY, mobile, motion, compact=True)
+    shown = "".join(texts(svg))
+    assert "TypeScript" in shown and "41.2%" in shown
+    assert "Web&Cloud" not in shown and "Languagesacross" not in shown
+    assert "Declared stack:" not in svg
+    assert 'stroke="' + SKY.faint + '"/>' not in svg
+    assert rules.viewbox(svg)[1] < 160
+    rules.text_stays_inside(svg)
+    rules.svg_is_sound(svg)
+    rules.within_budget(svg, 48_000, 80)

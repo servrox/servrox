@@ -12,6 +12,8 @@ I’m Marcel, an entrepreneur and builder from Stuttgart. I co-founded **servrox
 
 Previously: Web3 Topic Lead at Porsche and CIO at HAVN Labs, where we raised **$1M pre-seed**.
 
+<br><br>
+
 ### Agent Skills
 
 Reviewed workflows for Codex, Claude Code and Cursor, built from our daily engineering work.
@@ -31,6 +33,8 @@ Reviewed workflows for Codex, Claude Code and Cursor, built from our daily engin
 - **[Architecture Compass](https://stark-ai-de.github.io/agent-skills/skills/architecture-compass/)** — Hand-curated ADR guidance for architecture decisions.
 - **[Codex Spec Interviewer](https://stark-ai-de.github.io/agent-skills/skills/codex-spec-interviewer/)** — Turn fuzzy requirements into implementation-ready specs.
 - **[CodeGraph + ast-grep](https://stark-ai-de.github.io/agent-skills/skills/codegraph-ast-grep/)** — Explore code relationships and find structural patterns.
+
+<br><br>
 
 <table width="100%">
   <tr>
@@ -67,28 +71,21 @@ Reviewed workflows for Codex, Claude Code and Cursor, built from our daily engin
   </tr>
 </table>
 
+<br><br>
+
 **Also built:** [ConsoleFX](https://github.com/servrox/console-fx) · [1337 Turbo Starter](https://github.com/servrox/1337-turbo-starter)
 
-### Selected projects
-
-<picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/generated/projects-constellation-mobile-light.svg">
-  <source media="(max-width: 600px)" srcset="./assets/generated/projects-constellation-mobile.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/generated/projects-constellation-light.svg">
-  <img src="./assets/generated/projects-constellation.svg" width="850" alt="Featured repositories: Agent Skills, ConsoleFX and 1337 Turbo Starter, with their GitHub activity.">
-</picture>
-
-### My toolkit
+<br><br>
 
 <picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/generated/tech-stack-mobile-light.svg">
   <source media="(max-width: 600px)" srcset="./assets/generated/tech-stack-mobile.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/generated/tech-stack-light.svg">
-  <img src="./assets/generated/tech-stack.svg" width="850" alt="Public repository language distribution and my toolkit: TypeScript, Angular, React, Ionic; Next.js, Node.js, NestJS, Aptos; JavaScript, Bun, Turborepo, and GitHub Actions.">
+  <img src="./assets/generated/tech-stack.svg" width="850" alt="Programming language shares across public repositories, measured by bytes of code.">
 </picture>
 
 
-### Open-source activity
+<br><br>
 
   <picture>
     <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/generated/stats-card-mobile-light.svg">
@@ -98,6 +95,6 @@ Reviewed workflows for Codex, Claude Code and Cursor, built from our daily engin
   </picture>
 
 
-[LinkedIn](https://www.linkedin.com/in/servrox/) · [Website](https://servrox.solutions/)
+[LinkedIn](https://www.linkedin.com/in/servrox/)
 
 <sub>Each star represents a public repository; its glow reflects its stargazers. Built with <a href="https://github.com/vinimlo/galaxy-profile">Galaxy Profile</a>. The sky refreshes twice a day.</sub>

@@ -109,7 +109,7 @@ def _summary(shares: list, arms: list) -> str:
     return f"{measured}." + (f" Declared stack: {declared}." if declared else "")
 
 
-def render(shares: list, arms: list, theme, mobile: bool = False, motion: bool = True) -> str:
+def render(shares: list, arms: list, theme, mobile: bool = False, motion: bool = True, *, compact: bool = False) -> str:
     """shares is what model.language_shares returns; arms is the config's galaxy_arms.
 
     Every character of the declared stack is a glyph in the file, so the lists
@@ -119,7 +119,7 @@ def render(shares: list, arms: list, theme, mobile: bool = False, motion: bool =
     """
     drawn = []
     for list_lines in range(LIST_LINES, 0, -1):
-        drawn.append(_compose(shares, arms, theme, mobile, motion, list_lines))
+        drawn.append(_compose(shares, arms, theme, mobile, motion, list_lines, compact=compact))
         if len(drawn[-1].encode("utf-8")) <= BYTE_BUDGET:
             return drawn[-1]
     svg = min(drawn, key=lambda candidate: len(candidate.encode("utf-8")))
@@ -128,14 +128,15 @@ def render(shares: list, arms: list, theme, mobile: bool = False, motion: bool =
     return svg
 
 
-def _compose(shares: list, arms: list, theme, mobile: bool, motion: bool, list_lines: int) -> str:
+def _compose(shares: list, arms: list, theme, mobile: bool, motion: bool, list_lines: int, *, compact: bool = False) -> str:
     mo, ts = Motion(motion), Typesetter()
     shares = [(name, percent) for name, percent in shares if percent > 0]      # nothing to draw for a zero share
     width = 390 if mobile else 850
     x0, x1 = (24, width - 24) if mobile else (44, width - 44)
+    band_y = 24 if compact else BAND_Y
     heading_size = 13 if mobile else 14
     heading = wrap(HEADING, heading_size, "italic", x1 - x0, max_lines=1)[0]
-    body = [ts.line(x0, 38, heading, heading_size, theme.mute, "italic")]
+    body = [] if compact else [ts.line(x0, 38, heading, heading_size, theme.mute, "italic")]
     defs, gradients, tail, edge = [], set(), [], []
 
     for k, (name, percent, x, w, colour, step) in enumerate(_band(shares, theme, x0, x1) if shares else []):
@@ -153,7 +154,7 @@ def _compose(shares: list, arms: list, theme, mobile: bool, motion: bool, list_l
                      f'{mo.cls("breathe", delay=-k * 1.1 or None)}/>')
         # the segment opens from its own left edge, timed so the whole band reads as one sweep
         opening = mo.cls("grow", delay=SWEEP_STARTS + begins * SWEEP, duration=max(ends - begins, 0.01) * SWEEP)
-        body.append(f'<g transform="translate({num(x)} {BAND_Y})"><g{opening}><rect width="{num(w)}" height="{BAND_H}" '
+        body.append(f'<g transform="translate({num(x)} {band_y})"><g{opening}><rect width="{num(w)}" height="{BAND_H}" '
                     f'rx="2.5" fill="{colour}"/>{light}</g></g>')
         edge.append((ends, x + w))
         if name is None:
@@ -163,18 +164,23 @@ def _compose(shares: list, arms: list, theme, mobile: bool, motion: bool, list_l
         for name_size, figure_size in ((15.5, 13), (13, 12)) if w >= 60 else ((13, 12),):
             if max(measure(name, name_size), measure(figure, figure_size)) <= w - 4:
                 body.append(f'<g{mo.cls("soft", delay=SWEEP_STARTS + begins * SWEEP + 0.15)}>'
-                            f'{ts.line(x, BAND_Y + BAND_H + 27, name, name_size, theme.ink)}'
-                            f'{ts.line(x, BAND_Y + BAND_H + 44, figure, figure_size, theme.mute)}</g>')
+                            f'{ts.line(x, band_y + BAND_H + 27, name, name_size, theme.ink)}'
+                            f'{ts.line(x, band_y + BAND_H + 44, figure, figure_size, theme.mute)}</g>')
                 break
         else:
             tail.append(f"{name} {figure}")
 
     if not shares:
-        body.append(ts.line(x0, BAND_Y + 17, EMPTY, 16, theme.mute, "italic"))
+        body.append(ts.line(x0, band_y + 17, EMPTY, 16, theme.mute, "italic"))
+    tail_bottom = 0
     if tail:
         phrase, arrives = "and " + ", ".join(tail), mo.cls("soft", delay=SWEEP_STARTS + SWEEP)
-        if mobile:
-            body.append(ts.line(x0, BAND_Y + BAND_H + 64, wrap(phrase, 12.5, "regular", x1 - x0, max_lines=1)[0],
+        if compact:
+            for j, line in enumerate(wrap(phrase, 12.5, "regular", x1 - x0, max_lines=len(tail) + 1)):
+                tail_bottom = band_y + BAND_H + 64 + j * 17
+                body.append(ts.line(x0, tail_bottom, line, 12.5, theme.mute, attrs=arrives))
+        elif mobile:
+            body.append(ts.line(x0, band_y + BAND_H + 64, wrap(phrase, 12.5, "regular", x1 - x0, max_lines=1)[0],
                                 12.5, theme.mute, attrs=arrives))
         else:
             room = x1 - (x0 + measure(heading, heading_size, "italic") + 24)
@@ -192,10 +198,16 @@ def _compose(shares: list, arms: list, theme, mobile: bool, motion: bool, list_l
         head = "#ffffff" if theme.dark else theme.now
         body.append(mo.only(
             f'<g{mo.cls("edge", only=True)} stroke-linecap="round">'
-            f'<path d="M0 {BAND_Y - 5}V{BAND_Y + BAND_H + 5}" stroke="{theme.now}" stroke-width="9" stroke-opacity=".22"/>'
-            f'<path d="M0 {BAND_Y - 4}V{BAND_Y + BAND_H + 4}" stroke="{head}" stroke-width="1.6"/></g>'))
+            f'<path d="M0 {band_y - 5}V{band_y + BAND_H + 5}" stroke="{theme.now}" stroke-width="9" stroke-opacity=".22"/>'
+            f'<path d="M0 {band_y - 4}V{band_y + BAND_H + 4}" stroke="{head}" stroke-width="1.6"/></g>'))
 
-    rule_y = BAND_Y + BAND_H + (84 if mobile else 62)
+    if compact:
+        height = max(band_y + BAND_H + 68, tail_bottom + 24)
+        defs.append(ts.defs())
+        return frame(theme, width, height, "".join(body), "Programming language shares by bytes of code",
+                     _summary(shares, []), "".join(defs), mo)
+
+    rule_y = band_y + BAND_H + (84 if mobile else 62)
     body.append(f'<path d="M{x0} {rule_y}H{x1}" stroke="{theme.faint}"/>')
     stack, last = _stack(arms, theme, mobile, x0, x1, rule_y + 30, ts, list_lines)
     body.append(stack)
