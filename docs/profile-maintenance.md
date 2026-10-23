@@ -60,12 +60,12 @@ uv pip compile requirements-dev.in --constraint requirements.txt --python-versio
 
 ## Profile content and branding
 
-The public README presents Agent Skills first, followed by stark AI, servrox
-solutions and Panana Predictions. Brand originals and provenance live in
+The public README presents Agent Skills first, followed by a three-column row
+for stark AI, servrox solutions and Panana Predictions. Brand originals and provenance live in
 `assets/brands/`. Keep essential descriptions as Markdown and verify both
-light and dark picture variants when changing artwork. Toolkit and activity
-share a collapsed section; the generated project constellation remains
-available for the upstream template.
+light and dark picture variants when changing artwork. The project constellation, toolkit and activity
+are visible below the project links. Header image URLs carry a version query
+to refresh stale image-proxy caches after editorial changes.
 
 `profile.philosophy` supports multiple lines, including a separate attribution.
 The mobile header places the full philosophy below the galaxy and grows its

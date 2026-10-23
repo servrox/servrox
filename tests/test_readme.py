@@ -98,7 +98,7 @@ def test_every_file_the_readmes_point_at_exists_in_the_repository():
     for readme in ("README.md", "README.profile.md"):
         text = (ROOT / readme).read_text(encoding="utf-8")
         for path in set(re.findall(r'(?:src|srcset)="\./([^"]+)"', text)) | set(re.findall(r"\]\(([\w./-]+\.\w+)\)", text)):
-            assert (ROOT / path).exists(), f"{readme} points at {path}"
+            assert (ROOT / path.split("?", 1)[0]).exists(), f"{readme} points at {path}"
 
 
 def test_the_preview_images_are_what_the_demo_mode_draws_today():
