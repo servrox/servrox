@@ -45,8 +45,8 @@ class Geometry:
     """Where things are: the frame, the core, the spiral."""
 
     def __init__(self, mobile: bool, arms: int) -> None:
-        self.width, self.height = (390, 478) if mobile else (850, 430)
-        self.cx, self.cy, self.radius = (195, 282, 172) if mobile else (630, 215, 196)
+        self.width, self.height = (390, 350) if mobile else (850, 430)
+        self.cx, self.cy, self.radius = (195, 218, 110) if mobile else (630, 215, 196)
         self.arms = max(arms, 1)
         self.b = math.log(self.radius / R0) / (TURNS * 2 * math.pi)
         self.k = math.exp(self.b * PHI)

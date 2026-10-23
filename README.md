@@ -1,8 +1,8 @@
 <picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/generated/galaxy-header-mobile-light.svg?v=terry-davis-1">
-  <source media="(max-width: 600px)" srcset="./assets/generated/galaxy-header-mobile.svg?v=terry-davis-1">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/generated/galaxy-header-light.svg?v=terry-davis-1">
-  <img src="./assets/generated/galaxy-header.svg?v=terry-davis-1" width="850" alt="servrox — entrepreneur and builder in Stuttgart. A galaxy of my public repositories, grouped into web and mobile, full stack and Web3, and developer tools.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/generated/galaxy-header-mobile-light.svg?v=compact-galaxy-2">
+  <source media="(max-width: 600px)" srcset="./assets/generated/galaxy-header-mobile.svg?v=compact-galaxy-2">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/generated/galaxy-header-light.svg?v=compact-galaxy-2">
+  <img src="./assets/generated/galaxy-header.svg?v=compact-galaxy-2" width="850" alt="servrox — entrepreneur and builder in Stuttgart. A galaxy of my public repositories, grouped into web and mobile, full stack and Web3, and developer tools.">
 </picture>
 
 
@@ -38,36 +38,30 @@ Reviewed workflows for Codex, Claude Code and Cursor, built from our daily engin
 
 <table width="100%">
   <tr>
-    <th width="33%">stark AI</th>
-    <th width="33%">servrox solutions</th>
-    <th width="33%">Panana Predictions</th>
-  </tr>
-  <tr>
-    <td align="center" valign="middle">
-      <a href="https://github.com/stark-ai-de"><picture>
+    <td width="33%" align="center" valign="top">
+      <p><b>stark AI</b></p>
+      <p><a href="https://github.com/stark-ai-de"><picture>
         <source media="(prefers-color-scheme: dark)" srcset="./assets/brands/stark-ai-dark.svg">
-        <img src="./assets/brands/stark-ai-light.svg" width="110" alt="stark AI — original horse and wordmark">
-      </picture></a>
+        <img src="./assets/brands/stark-ai-light.svg" width="110" height="110" alt="stark AI — original horse and wordmark">
+      </picture></a></p>
+      <p>Practical AI systems, agents and engineering workflows.</p>
+      <p><a href="https://github.com/stark-ai-de">GitHub</a> · <a href="https://stark-ai.de/en">Website</a></p>
     </td>
-    <td align="center" valign="middle">
-      <a href="https://github.com/servrox-solutions"><picture>
+    <td width="33%" align="center" valign="top">
+      <p><b>servrox solutions</b></p>
+      <p><a href="https://github.com/servrox-solutions"><picture>
         <source media="(prefers-color-scheme: dark)" srcset="./assets/brands/servrox-dark.svg">
-        <img src="./assets/brands/servrox-light.svg" width="100" alt="servrox solutions — segmented S signet">
-      </picture></a>
+        <img src="./assets/brands/servrox-light.svg" width="90" height="90" alt="servrox solutions — segmented S signet">
+      </picture></a></p>
+      <p>The software consultancy I co-founded in 2021.</p>
+      <p><a href="https://github.com/servrox-solutions">GitHub</a> · <a href="https://servrox.solutions/">Website</a></p>
     </td>
-    <td align="center" valign="middle">
-      <a href="https://panana.fun/"><img src="./assets/brands/mr-peeltos.png" height="140" alt="Mr. Peeltos, Panana’s banana mascot in sunglasses and a colourful shirt"></a>
+    <td width="33%" align="center" valign="top">
+      <p><b>Panana Predictions</b></p>
+      <p><a href="https://panana.fun/"><img src="./assets/brands/mr-peeltos.png" width="60" height="110" alt="Mr. Peeltos, Panana’s banana mascot in sunglasses and a colourful shirt"></a></p>
+      <p>An on-chain prediction market on Aptos. <b>DeFi/RWA winner at Aptos Code Collision 2024.</b></p>
+      <p><a href="https://panana.fun/">Landing</a> · <a href="https://app.panana.fun/">Platform</a></p>
     </td>
-  </tr>
-  <tr>
-    <td align="center" valign="top">Practical AI systems, agents and engineering workflows.</td>
-    <td align="center" valign="top">The software consultancy I co-founded in 2021.</td>
-    <td align="center" valign="top">An on-chain prediction market on Aptos. <b>DeFi/RWA winner at Aptos Code Collision 2024.</b></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/stark-ai-de">GitHub</a> · <a href="https://stark-ai.de/en">Website</a></td>
-    <td align="center"><a href="https://github.com/servrox-solutions">GitHub</a> · <a href="https://servrox.solutions/">Website</a></td>
-    <td align="center"><a href="https://panana.fun/">Landing</a> · <a href="https://app.panana.fun/">Platform</a></td>
   </tr>
 </table>
 

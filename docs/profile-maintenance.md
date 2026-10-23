@@ -61,7 +61,8 @@ uv pip compile requirements-dev.in --constraint requirements.txt --python-versio
 ## Profile content and branding
 
 The public README presents Agent Skills first, followed by a three-column row
-for stark AI, servrox solutions and Panana Predictions. Brand originals and provenance live in
+for stark AI, servrox solutions and Panana Predictions. Each brand occupies
+one cell, with its own logo, description and links. Brand originals and provenance live in
 `assets/brands/`. Keep essential descriptions as Markdown and verify both
 light and dark picture variants when changing artwork. The language chart and activity are visible below the project links without
 section headings. `languages.compact: true` omits the chart heading, divider and
@@ -70,5 +71,6 @@ to refresh stale image-proxy caches after editorial changes.
 
 `profile.philosophy` supports multiple lines, including a separate attribution.
 The mobile header places the full philosophy below the galaxy and grows its
-frame to fit; desktop keeps it beside the galaxy. Review content after role
+frame to fit. The mobile sky uses a compact 350 px base frame and 110 px
+radius; desktop keeps its existing geometry and quote beside the galaxy. Review content after role
 changes, project launches, plugin distribution changes or broken destinations.

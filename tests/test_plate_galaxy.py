@@ -32,7 +32,7 @@ def test_the_spiral_reaches_the_rim_after_one_and_a_half_turns(mobile):
 def test_desktop_and_mobile_frames():
     desktop, mobile = Geometry(False, 2), Geometry(True, 2)
     assert (desktop.width, desktop.height, desktop.cx, desktop.cy, desktop.radius) == (850, 430, 630, 215, 196)
-    assert (mobile.width, mobile.height, mobile.cx, mobile.cy, mobile.radius) == (390, 478, 195, 282, 172)
+    assert (mobile.width, mobile.height, mobile.cx, mobile.cy, mobile.radius) == (390, 350, 195, 218, 110)
 
 
 def test_a_point_on_an_arm_is_at_the_asked_distance_from_the_core():
@@ -466,8 +466,8 @@ def animated(svg):
 def test_plate_sizes():
     assert rules.viewbox(plate()) == (850, 430)
     assert rules.viewbox(plate(mobile=True))[0] == 390
-    assert rules.viewbox(plate(mobile=True))[1] > 478
-    assert rules.viewbox(plate(profile=dict(PROFILE, philosophy=""), mobile=True)) == (390, 478)
+    assert rules.viewbox(plate(mobile=True))[1] > 350
+    assert rules.viewbox(plate(profile=dict(PROFILE, philosophy=""), mobile=True)) == (390, 350)
 
 
 def test_one_star_per_repository():
