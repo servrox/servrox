@@ -2,9 +2,11 @@ username: servrox
 
 profile:
   name: "servrox"
-  tagline: "Full-stack developer · Stuttgart"
+  tagline: "Entrepreneur & Builder"
   location: "Stuttgart, Germany"
-  philosophy: "Thoughtful interfaces. Useful tools."
+  philosophy: |-
+    An idiot admires complexity, a genius admires simplicity.
+    — Terry Davis, creator of TempleOS
 
 social:
   website: "https://servrox.solutions/"

@@ -57,3 +57,17 @@ Linux `uv` tool, then run the tests and Security Baseline:
 uv pip compile requirements.in --python-version 3.12 --universal --generate-hashes --no-header --no-annotate --output-file requirements.txt
 uv pip compile requirements-dev.in --constraint requirements.txt --python-version 3.12 --universal --generate-hashes --no-header --no-annotate --output-file requirements-dev.txt
 ```
+
+## Profile content and branding
+
+The public README presents Agent Skills first, followed by stark AI, servrox
+solutions and Panana Predictions. Brand originals and provenance live in
+`assets/brands/`. Keep essential descriptions as Markdown and verify both
+light and dark picture variants when changing artwork. Toolkit and activity
+share a collapsed section; the generated project constellation remains
+available for the upstream template.
+
+`profile.philosophy` supports multiple lines, including a separate attribution.
+The mobile header places the full philosophy below the galaxy and grows its
+frame to fit; desktop keeps it beside the galaxy. Review content after role
+changes, project launches, plugin distribution changes or broken destinations.

@@ -465,7 +465,9 @@ def animated(svg):
 
 def test_plate_sizes():
     assert rules.viewbox(plate()) == (850, 430)
-    assert rules.viewbox(plate(mobile=True)) == (390, 478)
+    assert rules.viewbox(plate(mobile=True))[0] == 390
+    assert rules.viewbox(plate(mobile=True))[1] > 478
+    assert rules.viewbox(plate(profile=dict(PROFILE, philosophy=""), mobile=True)) == (390, 478)
 
 
 def test_one_star_per_repository():
@@ -501,9 +503,21 @@ def test_a_long_name_shrinks_to_fit_beside_the_galaxy_and_is_cut_if_it_must():
     assert run["text"].endswith("…")
 
 
-def test_mobile_shows_name_and_tagline_only():
-    names = texts(plate(mobile=True))
-    assert "NyxOrion" in names and not any(t.startswith("“The") or t.startswith('"The') for t in names)
+@pytest.mark.parametrize("mobile", [False, True])
+def test_full_quote_and_attribution_fit_the_frame(mobile):
+    quote = "An idiot admires complexity, a genius admires simplicity."
+    author = "— Terry Davis, creator of TempleOS"
+    svg = plate(profile=dict(PROFILE, philosophy=quote + "\n" + author), mobile=mobile)
+    runs = text_runs(svg)
+    joined = "".join(run["text"] for run in runs)
+    assert "".join(quote.split()) in joined
+    assert "".join(author.split()) in joined
+    height = float(ET.fromstring(svg).attrib["viewBox"].split()[3])
+    assert all(run["y"] + run["size"] < height for run in runs)
+    if mobile:
+        quote_runs = [run for run in runs if run["y"] > Geometry(True, 3).height]
+        assert quote_runs
+        assert all(run["x"] + run["width"] <= 390 - 24 for run in quote_runs)
 
 
 def test_missing_tagline_and_philosophy_leave_no_empty_lines():

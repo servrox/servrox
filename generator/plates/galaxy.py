@@ -379,7 +379,7 @@ THINNING = (1.0, 0.75, 0.55, 0.4, 0.25)   # share of the dust kept, tried in ord
 
 
 def _identity(profile: dict, theme, geo: Geometry, ts: Typesetter) -> tuple:
-    """(markup, boxes) of the name, the tagline and (on desktop) the philosophy line.
+    """(markup, boxes) of the name, the tagline and the philosophy, below the sky on mobile.
 
     Never animated: readable from the first frame. The boxes are what each
     line occupies, for the star names to keep off.
@@ -398,10 +398,12 @@ def _identity(profile: dict, theme, geo: Geometry, ts: Typesetter) -> tuple:
     tag_size = 17 if mobile else 20
     lines.append((left + (0 if mobile else 1), y + (26 if mobile else 32),
                   (wrap(tagline, tag_size, "italic", room, max_lines=1) or [""])[0], tag_size, theme.mute, "italic"))
-    if not mobile:
-        for index, line in enumerate(wrap(str(profile.get("philosophy") or ""), 14.5, "italic", min(room, 320),
-                                          balance=True)):
-            lines.append((left + 1, y + 78 + index * 19, line, 14.5, theme.mute, "italic"))
+    philosophy = [line for paragraph in str(profile.get("philosophy") or "").splitlines()
+                  for line in wrap(paragraph, 14.5, "italic", min(room, 320), balance=True)]
+    philosophy_y = geo.height + 24 if mobile else y + 78
+    for index, line in enumerate(philosophy):
+        lines.append((left + (0 if mobile else 1), philosophy_y + index * 19,
+                      line, 14.5, theme.mute, "italic"))
     lines = [line for line in lines if line[2]]
     boxes = [(x, base - text_size * 0.85, measure(text, text_size, style), text_size * 1.15)
              for x, base, text, text_size, _fill, style in lines]
@@ -583,4 +585,6 @@ def _compose(model, profile: dict, theme, mobile: bool, motion: bool, seed: str,
     body.append(identity)
     defs.append(ts.defs())
     title = f"Galaxy of {profile.get('name', '')}".strip()
-    return frame(theme, geo.width, geo.height, "".join(body), title, _summary(model), "".join(defs), mo)
+    height = max(geo.height, math.ceil(max((y + h for _x, y, _w, h in identity_boxes), default=0) + 24))
+    description = _summary(model) + " " + str(profile.get("philosophy") or "")
+    return frame(theme, geo.width, height, "".join(body), title, description.strip(), "".join(defs), mo)

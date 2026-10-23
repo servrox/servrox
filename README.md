@@ -2,37 +2,80 @@
   <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/generated/galaxy-header-mobile-light.svg">
   <source media="(max-width: 600px)" srcset="./assets/generated/galaxy-header-mobile.svg">
   <source media="(prefers-color-scheme: light)" srcset="./assets/generated/galaxy-header-light.svg">
-  <img src="./assets/generated/galaxy-header.svg" width="850" alt="servrox — full-stack developer in Stuttgart. A galaxy of my public repositories, grouped into web and mobile, full stack and Web3, and developer tools.">
+  <img src="./assets/generated/galaxy-header.svg" width="850" alt="servrox — entrepreneur and builder in Stuttgart. A galaxy of my public repositories, grouped into web and mobile, full stack and Web3, and developer tools.">
 </picture>
+
+
+I’m Marcel, an entrepreneur and builder from Stuttgart. I co-founded **servrox solutions** in 2021 and run our software consultancy. With **stark AI**, I’m focused on AI agents and harness engineering.
+
+**TypeScript** is my default across the stack. My search for the right Web3 tools took me from IOTA to **Aptos**, still one of my favourite stacks, and to co-building Panana Predictions.
+
+Previously: Web3 Topic Lead at Porsche Digital and CIO at HAVN Labs, where we raised **$1M pre-seed**. I started in software engineering at CENIT and consulting at EXXETA.
+
+### Agent Skills
+
+Reviewed workflows for Codex, Claude Code and Cursor, built from our daily engineering work.
 
 <p align="center">
-  <a href="https://servrox.solutions/">Website ↗</a> &nbsp; · &nbsp;
-  <a href="https://console-fx.vercel.app/studio/">ConsoleFX studio</a> &nbsp; · &nbsp;
-  <a href="https://github.com/stark-ai-de">STARK AI</a>
+  <a href="https://github.com/stark-ai-de/agent-skills"><img src="./assets/brands/agent-skills.svg" width="480" alt="Agent Skills by stark-ai-de — reusable workflows for AI coding agents"></a>
 </p>
 
-### Building across the stack
+<p align="center">
+  <a href="https://chatgpt.com/plugins/plugins_6a85d98a7bc48191879aedd91610271e"><img src="./assets/brands/chatgpt-plugin-badge.svg" alt="Available as a ChatGPT plugin"></a>
+  <a href="https://www.skills.sh/stark-ai-de/agent-skills"><img src="https://skills.sh/b/stark-ai-de/agent-skills" alt="Agent Skills on skills.sh"></a>
+</p>
 
-I’m a full-stack developer based in **Stuttgart, Germany**. I build web and hybrid mobile apps, open-source libraries, and tools that make development a little more expressive.
+**[Repository](https://github.com/stark-ai-de/agent-skills)** · **[Browse the catalog](https://stark-ai-de.github.io/agent-skills/)** · **[ChatGPT plugin](https://chatgpt.com/plugins/plugins_6a85d98a7bc48191879aedd91610271e)**
 
-**TypeScript** is the common thread: Angular and Ionic, React and Next.js, Node.js and NestJS. My public work also spans **Web3** and **AI coding workflows**.
+- **[Jev Capability Advisor](https://stark-ai-de.github.io/agent-skills/skills/jev-capability-advisor/)** — Find suitable skills and MCP tools for the task.
+- **[Architecture Compass](https://stark-ai-de.github.io/agent-skills/skills/architecture-compass/)** — Hand-curated ADR guidance for architecture decisions.
+- **[Codex Spec Interviewer](https://stark-ai-de.github.io/agent-skills/skills/codex-spec-interviewer/)** — Turn fuzzy requirements into implementation-ready specs.
+- **[CodeGraph + ast-grep](https://stark-ai-de.github.io/agent-skills/skills/codegraph-ast-grep/)** — Explore code relationships and find structural patterns.
 
-### Selected work
+### stark AI
 
-<picture>
-  <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/generated/projects-constellation-mobile-light.svg">
-  <source media="(max-width: 600px)" srcset="./assets/generated/projects-constellation-mobile.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/generated/projects-constellation-light.svg">
-  <img src="./assets/generated/projects-constellation.svg" width="850" alt="Featured projects: ConsoleFX, a studio and library for expressive console output; 1337 Turbo Starter, a Web3 monorepo for Aptos and IOTA; and Agent Skills, practical workflows for AI coding agents.">
-</picture>
+Practical AI systems, agents and engineering workflows.
 
-| Project | What I’m building |
-| --- | --- |
-| **[ConsoleFX](https://github.com/servrox/console-fx)** | A TypeScript library and [visual studio](https://console-fx.vercel.app/studio/) for expressive browser-console messages. |
-| **[1337 Turbo Starter](https://github.com/servrox/1337-turbo-starter)** | A full-stack Web3 monorepo with shared tooling, Aptos, and an IOTA wallet experience. |
-| **[Agent Skills](https://github.com/stark-ai-de/agent-skills)** | Open-source skills and engineering workflows for Codex, Claude Code, and Cursor. |
+<p align="center">
+  <a href="https://github.com/stark-ai-de">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/brands/stark-ai-dark.svg">
+      <img src="./assets/brands/stark-ai-light.svg" width="200" alt="stark AI — original horse and wordmark">
+    </picture>
+  </a>
+</p>
 
-### My toolkit
+[GitHub](https://github.com/stark-ai-de) · [Website](https://stark-ai.de/en)
+
+### servrox solutions
+
+The software consultancy I co-founded in 2021.
+
+<p align="center">
+  <a href="https://github.com/servrox-solutions">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/brands/servrox-dark.svg">
+      <img src="./assets/brands/servrox-light.svg" width="180" alt="servrox solutions — segmented S signet">
+    </picture>
+  </a>
+</p>
+
+[Explore servrox solutions on GitHub](https://github.com/servrox-solutions)
+
+### Panana Predictions
+
+An on-chain prediction market on Aptos. **DeFi/RWA winner at Aptos Code Collision 2024.**
+
+<p align="center">
+  <a href="https://panana.fun/"><img src="./assets/brands/mr-peeltos.png" width="180" alt="Mr. Peeltos, Panana’s banana mascot in sunglasses and a colourful shirt"></a>
+</p>
+
+[Explore Panana Predictions](https://panana.fun/)
+
+**Also built:** [ConsoleFX](https://github.com/servrox/console-fx) · [1337 Turbo Starter](https://github.com/servrox/1337-turbo-starter)
+
+<details>
+  <summary><b>Toolkit & activity</b></summary>
 
 <picture>
   <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/generated/tech-stack-mobile-light.svg">
@@ -41,9 +84,7 @@ I’m a full-stack developer based in **Stuttgart, Germany**. I build web and hy
   <img src="./assets/generated/tech-stack.svg" width="850" alt="Public repository language distribution and my toolkit: TypeScript, Angular, React, Ionic; Next.js, Node.js, NestJS, Aptos; JavaScript, Bun, Turborepo, and GitHub Actions.">
 </picture>
 
-<details>
-  <summary><b>Open-source activity</b> — a year in contributions</summary>
-  <br>
+
   <picture>
     <source media="(max-width: 600px) and (prefers-color-scheme: light)" srcset="./assets/generated/stats-card-mobile-light.svg">
     <source media="(max-width: 600px)" srcset="./assets/generated/stats-card-mobile.svg">
@@ -52,6 +93,6 @@ I’m a full-stack developer based in **Stuttgart, Germany**. I build web and hy
   </picture>
 </details>
 
-<br>
+[LinkedIn](https://www.linkedin.com/in/servrox/) · [Website](https://servrox.solutions/)
 
-<sub>Each star represents a public repository; its glow reflects its stargazers. Built with <a href="https://github.com/vinimlo/galaxy-profile">Galaxy Profile</a>, with custom colors and focus areas. The sky refreshes twice a day.</sub>
+<sub>Each star represents a public repository; its glow reflects its stargazers. Built with <a href="https://github.com/vinimlo/galaxy-profile">Galaxy Profile</a>. The sky refreshes twice a day.</sub>
